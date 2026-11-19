@@ -1,16 +1,34 @@
-# React + Vite
+# Call Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dashboard that analyses telecom Call Data Records (CDR) from an API, built for Week 2 of my Software Development Internship with London Success Academy.
 
-Currently, two official plugins are available:
+**Live demo:** [call-analytics-dashboard-rho.vercel.app/](https://call-analytics-dashboard-rho.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Dashboard in dark mode](screenshots/dark.png)
+![Dashboard in light mode](screenshots/light.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- KPI cards: total calls, total cost, average duration, successful and failed calls
+- Charts: call duration, cost by city, call activity by hour, calls by city
+- Call log table, newest first
+- Light and dark glass theme, remembered per browser tab
+- Data quality notes that flag issues in the source data
+- Loading, error and empty states
+- Responsive layout for desktop and mobile
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React (Vite) · TailwindCSS · shadcn/ui · Recharts · Vercel
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Data Notes
+
+- Every call in the provided dataset is marked as failed, so the success rate is 0%.
+- Some calls have a `callDuration` that doesn't match their start and end times. The dashboard uses
